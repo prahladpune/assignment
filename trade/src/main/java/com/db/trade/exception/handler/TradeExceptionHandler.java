@@ -12,7 +12,7 @@ import java.io.InvalidClassException;
 @RestControllerAdvice
 @Slf4j
 public class TradeExceptionHandler extends ResponseEntityExceptionHandler {
-    @ExceptionHandler(InvalidClassException.class)
+    @ExceptionHandler(InvalidTradeException.class)
     public ResponseEntity<String> handleException(InvalidTradeException exception){
       log.error(exception.getMessage());
       return ResponseEntity.badRequest().body(exception.getMessage());
